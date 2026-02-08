@@ -1,0 +1,463 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    /* Light mode colors */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #fafafa;
+    --color-bg-accent: #f5f5f5;
+    
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-muted: #666666;
+    --color-text-light: #999999;
+    
+    --color-border: #e5e5e5;
+    --color-border-dark: #cccccc;
+    
+    /* Typography */
+    --font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', 'Monaco', 'Consolas', 'Courier New', monospace;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    
+    /* Layout */
+    --max-width: 720px;
+}
+
+/* Dark mode - overwrites the color variables */
+:root.dark {
+    --color-bg-primary: hsl(207, 26%, 17%);
+    --color-bg-secondary: hsl(209, 23%, 22%);
+    --color-bg-accent: hsl(209, 23%, 25%);
+    
+    --color-text-primary: hsl(0, 0%, 100%);
+    --color-text-secondary: hsl(0, 0%, 90%);
+    --color-text-muted: hsl(0, 0%, 70%);
+    --color-text-light: hsl(0, 0%, 52%);
+    
+    --color-border: hsl(209, 23%, 30%);
+    --color-border-dark: hsl(209, 23%, 35%);
+}
+
+/* Respect user's system preference if they haven't manually chosen */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+        --color-bg-primary: hsl(207, 26%, 17%);
+        --color-bg-secondary: hsl(209, 23%, 22%);
+        --color-bg-accent: hsl(209, 23%, 25%);
+        
+        --color-text-primary: hsl(0, 0%, 100%);
+        --color-text-secondary: hsl(0, 0%, 90%);
+        --color-text-muted: hsl(0, 0%, 70%);
+        --color-text-light: hsl(0, 0%, 52%);
+        
+        --color-border: hsl(209, 23%, 30%);
+        --color-border-dark: hsl(209, 23%, 35%);
+    }
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+svg {
+    width: 1.5rem;
+}
+
+.toggle {
+    padding: var(--space-lg) 0;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    transition: opacity 0.2s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.7;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;    
+}
+
+/* ===== HEADER ===== */
+.header {
+    border-bottom: 1px solid var(--color-border);
+    margin: 0 auto;
+}
+
+.header img {
+    border-radius: 100%;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-primary);
+}
+
+.site-tagline {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    padding: var(--space-lg) 0;
+}
+
+/* ===== INTRODUCTION ===== */
+.intro {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.intro-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.intro-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.intro-links a {
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    border: 0.5px solid var(--color-text-primary);
+    padding: 0.3rem 1rem;
+    border-radius: 100vw;
+    transition: opacity 0.2s ease;
+    display: flex; 
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.intro-links a:hover {
+    opacity: 0.7;
+}
+
+.arrow-icon {
+    fill: currentColor;
+    width: 0.5rem;
+}
+
+
+/* ===== SECTIONS ===== */
+.section {
+    margin-bottom: var(--space-xl);
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-primary);
+}
+
+/* ===== PROJECTS ===== */
+.project-list {
+    list-style: none;
+}
+
+.project-item {
+    margin-bottom: var(--space-lg);
+    background-color: var(--color-bg-secondary);
+    padding-bottom: var(--space-lg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.project-link:hover {
+    opacity: 1;
+}
+
+.project-link:hover .project-thumbnail {
+    opacity: 0.8;
+}
+
+.project-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    background-size: cover;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding-left: var(--space-xs);
+}
+
+.project-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-primary);
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-xs);
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.project-tech {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+}
+
+/* ===== SKILLS ===== */
+.skills {
+    background-color: var(--color-bg-primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: var(--space-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color: var(--color-bg-secondary);
+    padding: var(--space-md);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.skill-category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-primary);
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: var(--space-xs) 0;
+    color: var(--color-text-secondary);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-xl);
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1px;
+}
+
+.footer-links a:hover {
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-border-dark);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    :root {
+        --space-xl: 3rem;
+        --space-lg: 2rem;
+    }
+    
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-md: 1rem;
+        --space-lg: 1.5rem;
+        --space-xl: 2rem;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .site-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-heading {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===== FADE-IN ANIMATION ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+```
+
+## Key Changes Made:
+
+1. **Organized all color variables** at the top with semantic names
+2. **Replaced every instance** of old color variables (`--black`, `--gray`, `--white`, etc.) with the new semantic ones
+3. **Added cursor pointer** to the theme toggle button
+4. **Removed the redundant media query** at the bottom that was causing conflicts
+5. **Made dark mode properly functional** - now when you add the `.dark` class to `<html>`, everything updates automatically
+
+## To Make the Toggle Work:
+
+You'll need this JavaScript in your `main.js`:
+
+```javascript
+const themeToggle = document.querySelector('.theme-toggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to system preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    html.classList.add(currentTheme);
+}
+
+themeToggle.addEventListener('click', () => {
+    // Toggle between light and dark
+    if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
