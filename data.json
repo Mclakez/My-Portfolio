@@ -53,14 +53,14 @@
     "description": "A website for a bank",
     "link": "https://tip-calculator-5rcz.vercel.app/",
     "image": "./images/bank.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "API"]
+    "technologies": ["HTML", "CSS", "JavaScript"]
   },
   {
     "title": "Tip calculator",
     "description": "A simple app for calculating tip based on the number of people and the percentage to be given.",
     "link": "https://tip-calculator-theta-ebon.vercel.app/",
     "image": "./images/tip.png",
-    "technologies": ["HTML", "CSS", "JavaScript", "API"]
+    "technologies": ["HTML", "CSS", "JavaScript"]
   },
   {
     "title": "Time tracking dashboard",
