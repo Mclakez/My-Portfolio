@@ -1,7 +1,8 @@
 [
   {
-    "title": "NaijaFix",
-    "description": "A civic reporting platform for community issues.",
+    "title": "NaijaFix – Community Issue Reporting Platform",
+    "description": "A community issue reporting platform where users can report infrastructure problems such as flooding, overcrowding, and road damage.
+Includes authentication, issue tracking, and status updates.",
     "link": "https://naijafix-4pvj.onrender.com",
     "image": "./images/naijafix_app.png",
     "technologies": ["HTML", "CSS", "JavaScript", "NodeJs", "Express", "MongoDB"]
