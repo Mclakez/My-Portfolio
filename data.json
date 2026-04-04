@@ -7,6 +7,13 @@
     "technologies": ["HTML", "CSS", "JavaScript", "NodeJs", "Express", "MongoDB"]
   },
   {
+  "title": "Weather App",
+  "description": "A responsive weather app with real-time forecasts, hourly and daily breakdowns, and live city search powered by the Open-Meteo API.",
+  "link": "https://weather-app-main-blue-five.vercel.app/",
+  "image": "./images/weather-app.png",
+  "technologies": ["React", "Tailwind CSS", "JavaScript", "Open-Meteo API"]
+  },
+  {
     "title": "Mortgage Calculator",
     "description": "A JavaScript app to calculate monthly mortgage payments.",
     "link": "https://mortgage-calculator-gamma-eosin.vercel.app/",
