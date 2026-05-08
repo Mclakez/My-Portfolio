@@ -23,9 +23,9 @@
   {
     "title": "Product App",
     "description": "A product showcase application.",
-    "link": "https://netflix-54s7.vercel.app/",
+    "link": "https://list-product-typescript.vercel.app/",
     "image": "./images/product_app.png",
-    "technologies": ["HTML", "CSS", "JavaScript"]
+    "technologies": ["HTML", "CSS", "Typescript"]
   },
   {
     "title": "Space App",
